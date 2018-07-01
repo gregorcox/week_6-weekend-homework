@@ -11,6 +11,7 @@ public class DiningRoomTest {
 
     DiningRoom diningRoom;
     ArrayList<Guest> guests;
+    Guest guest;
 
     @Before
     public void setup(){
@@ -26,5 +27,18 @@ public class DiningRoomTest {
     @Test
     public void hasCapacity(){
         assertEquals(12, diningRoom.getCapacity());
+    }
+
+    @Test
+    public void canAddGuest(){
+        diningRoom.addGuest(guest);
+        assertEquals(1, diningRoom.guestCount());
+    }
+
+    @Test
+    public void canRemoveGuest(){
+        diningRoom.addGuest(guest);
+        diningRoom.removeGuest(guest);
+        assertEquals(0, diningRoom.guestCount());
     }
 }

@@ -12,6 +12,7 @@ public class ConferenceRoomTest {
 
     ConferenceRoom conferenceRoom;
     ArrayList<Guest> guests;
+    Guest guest;
 
     @Before
     public void setup(){
@@ -27,6 +28,19 @@ public class ConferenceRoomTest {
     @Test
     public void hasDailyRate(){
         assertEquals(500, conferenceRoom.getDailyRate());
+    }
+
+    @Test
+    public void canAddGuest(){
+        conferenceRoom.addGuest(guest);
+        assertEquals(1, conferenceRoom.guestCount());
+    }
+
+    @Test
+    public void canRemoveGuest(){
+        conferenceRoom.addGuest(guest);
+        conferenceRoom.removeGuest(guest);
+        assertEquals(0, conferenceRoom.guestCount());
     }
 
 
