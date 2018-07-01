@@ -12,11 +12,13 @@ public class BedroomTest {
 
     Bedroom bedroom;
     ArrayList<Guest> guests;
+    Guest guest;
 
     @Before
     public void setup(){
         guests = new ArrayList<>();
         bedroom = new Bedroom(1, RoomType.DOUBLE, 50, guests);
+        guest = new Guest("John");
     }
 
     @Test
@@ -41,6 +43,19 @@ public class BedroomTest {
 
     @Test
     public void hasNoGuests(){
+        assertEquals(0, bedroom.guestCount());
+    }
+
+    @Test
+    public void canAddGuest(){
+        bedroom.addGuest(guest);
+        assertEquals(1, bedroom.guestCount());
+    }
+
+    @Test
+    public void canRemoveGuest(){
+        bedroom.addGuest(guest);
+        bedroom.removeGuest(guest);
         assertEquals(0, bedroom.guestCount());
     }
 

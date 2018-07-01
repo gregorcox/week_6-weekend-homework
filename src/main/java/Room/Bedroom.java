@@ -32,4 +32,12 @@ public class Bedroom extends Room {
     public int getNightlyRate() {
         return nightlyRate;
     }
+
+    public void addGuest(Guest guest){
+        this.guests.add(guest);
+    }
+
+    public void removeGuest(Guest guest){
+        this.guests.remove(guest);
+    }
 }
