@@ -43,7 +43,13 @@ public class HotelTest {
     public void canCheckInGuestToConferenceRoom(){
         hotel.checkInGuest(conferenceRoom, guest);
         assertEquals(1, conferenceRoom.guestCount());
+    }
 
+    @Test
+    public void canCheckOutGuest(){
+        hotel.checkInGuest(bedroom, guest);
+        hotel.checkOutGuest(bedroom, guest);
+        assertEquals(0, bedroom.guestCount());
     }
 
 }
