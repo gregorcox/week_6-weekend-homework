@@ -3,6 +3,7 @@ package Hotel;
 import Room.Bedroom;
 import Room.ConferenceRoom;
 import Room.DiningRoom;
+import Room.Room;
 
 import java.util.ArrayList;
 
@@ -18,6 +19,12 @@ public class Hotel {
         this.bedrooms = bedrooms;
         this.conferenceRooms = conferenceRooms;
         this.diningRooms = diningRooms;
+    }
+
+    public void checkInGuest(Room room, Guest guest){
+        if (!room.checkIfFull()){
+            room.addGuest(guest);
+        }
     }
 
 }
