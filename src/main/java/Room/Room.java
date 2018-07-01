@@ -29,4 +29,12 @@ public abstract class Room {
         this.guests.remove(guest);
     }
 
+    public boolean checkIfFull(){
+        if (this.guests.size() > this.getCapacity()){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }

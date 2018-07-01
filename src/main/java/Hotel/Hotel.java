@@ -19,4 +19,5 @@ public class Hotel {
         this.conferenceRooms = conferenceRooms;
         this.diningRooms = diningRooms;
     }
+
 }
